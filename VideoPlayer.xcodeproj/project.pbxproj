@@ -99,13 +99,10 @@
 		A621D3EC26D876A7006D4F65 /* VideoPlayer */ = {
 			isa = PBXGroup;
 			children = (
-				A621D3ED26D876A7006D4F65 /* AppDelegate.swift */,
-				A621D3EF26D876A7006D4F65 /* SceneDelegate.swift */,
-				A621D3F126D876A7006D4F65 /* ViewController.swift */,
-				A621D3F326D876A7006D4F65 /* Main.storyboard */,
-				A621D3F626D876A9006D4F65 /* Assets.xcassets */,
-				A621D3F826D876A9006D4F65 /* LaunchScreen.storyboard */,
-				A621D3FB26D876A9006D4F65 /* Info.plist */,
+				CEE1C5A127E5E313001DAB32 /* Global */,
+				CEE1C5A227E5E326001DAB32 /* MVVM */,
+				CEE1C5A027E5DB01001DAB32 /* Storyboards */,
+				CEE1C5A627E5E37F001DAB32 /* Supporting Files */,
 			);
 			path = VideoPlayer;
 			sourceTree = "<group>";
@@ -126,6 +123,65 @@
 				A621D41126D876A9006D4F65 /* Info.plist */,
 			);
 			path = VideoPlayerUITests;
+			sourceTree = "<group>";
+		};
+		CEE1C5A027E5DB01001DAB32 /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				A621D3F326D876A7006D4F65 /* Main.storyboard */,
+				A621D3F826D876A9006D4F65 /* LaunchScreen.storyboard */,
+			);
+			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		CEE1C5A127E5E313001DAB32 /* Global */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Global;
+			sourceTree = "<group>";
+		};
+		CEE1C5A227E5E326001DAB32 /* MVVM */ = {
+			isa = PBXGroup;
+			children = (
+				CEE1C5A527E5E35F001DAB32 /* ViewModel */,
+				CEE1C5A427E5E350001DAB32 /* View */,
+				CEE1C5A327E5E345001DAB32 /* Model */,
+			);
+			path = MVVM;
+			sourceTree = "<group>";
+		};
+		CEE1C5A327E5E345001DAB32 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		CEE1C5A427E5E350001DAB32 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				A621D3F126D876A7006D4F65 /* ViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		CEE1C5A527E5E35F001DAB32 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		CEE1C5A627E5E37F001DAB32 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				A621D3FB26D876A9006D4F65 /* Info.plist */,
+				A621D3ED26D876A7006D4F65 /* AppDelegate.swift */,
+				A621D3EF26D876A7006D4F65 /* SceneDelegate.swift */,
+				A621D3F626D876A9006D4F65 /* Assets.xcassets */,
+			);
+			path = "Supporting Files";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
