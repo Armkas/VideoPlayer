@@ -6,14 +6,18 @@
 //
 
 import UIKit
+import RxCocoa
+import RxSwift
 
 class ViewController: UIViewController {
+    
+    let viewModel = ViewModel()
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        
+        viewModel.getData()
+        
     }
-
-
 }
 

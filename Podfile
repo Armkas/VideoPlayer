@@ -15,4 +15,3 @@ target 'VideoPlayerTests' do
     pod 'RxBlocking', '6.5.0'
     pod 'RxTest', '6.5.0'
 end
-

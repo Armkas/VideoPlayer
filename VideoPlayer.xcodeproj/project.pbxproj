@@ -17,6 +17,8 @@
 		A621D3FA26D876A9006D4F65 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A621D3F826D876A9006D4F65 /* LaunchScreen.storyboard */; };
 		A621D40526D876A9006D4F65 /* VideoPlayerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A621D40426D876A9006D4F65 /* VideoPlayerTests.swift */; };
 		A621D41026D876A9006D4F65 /* VideoPlayerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A621D40F26D876A9006D4F65 /* VideoPlayerUITests.swift */; };
+		CE72C24E27E77E4F002B9937 /* Video.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE72C24D27E77E4F002B9937 /* Video.swift */; };
+		CE72C25027E861C3002B9937 /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE72C24F27E861C3002B9937 /* ViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +57,8 @@
 		A621D40F26D876A9006D4F65 /* VideoPlayerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoPlayerUITests.swift; sourceTree = "<group>"; };
 		A621D41126D876A9006D4F65 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BAAF6FC34B83158A16FD1554 /* Pods-VideoPlayer.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VideoPlayer.release.xcconfig"; path = "Target Support Files/Pods-VideoPlayer/Pods-VideoPlayer.release.xcconfig"; sourceTree = "<group>"; };
+		CE72C24D27E77E4F002B9937 /* Video.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Video.swift; sourceTree = "<group>"; };
+		CE72C24F27E861C3002B9937 /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
 		CED97FAC92B734B19CB8EE68 /* Pods_VideoPlayer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_VideoPlayer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D494F20D123E2D58FFBD168A /* Pods_VideoPlayerTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_VideoPlayerTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -121,8 +125,9 @@
 			isa = PBXGroup;
 			children = (
 				A621D3FB26D876A9006D4F65 /* Info.plist */,
-				CEE1C5A127E5E313001DAB32 /* Global */,
-				CEE1C5A227E5E326001DAB32 /* MVVM */,
+				CEE1C5A527E5E35F001DAB32 /* ViewModel */,
+				CEE1C5A427E5E350001DAB32 /* View */,
+				CEE1C5A327E5E345001DAB32 /* Model */,
 				CEE1C5A027E5DB01001DAB32 /* Storyboards */,
 				CEE1C5A627E5E37F001DAB32 /* Supporting Files */,
 			);
@@ -156,26 +161,10 @@
 			path = Storyboards;
 			sourceTree = "<group>";
 		};
-		CEE1C5A127E5E313001DAB32 /* Global */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Global;
-			sourceTree = "<group>";
-		};
-		CEE1C5A227E5E326001DAB32 /* MVVM */ = {
-			isa = PBXGroup;
-			children = (
-				CEE1C5A527E5E35F001DAB32 /* ViewModel */,
-				CEE1C5A427E5E350001DAB32 /* View */,
-				CEE1C5A327E5E345001DAB32 /* Model */,
-			);
-			path = MVVM;
-			sourceTree = "<group>";
-		};
 		CEE1C5A327E5E345001DAB32 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				CE72C24D27E77E4F002B9937 /* Video.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -191,6 +180,7 @@
 		CEE1C5A527E5E35F001DAB32 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				CE72C24F27E861C3002B9937 /* ViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -434,6 +424,8 @@
 				A621D3F226D876A7006D4F65 /* ViewController.swift in Sources */,
 				A621D3EE26D876A7006D4F65 /* AppDelegate.swift in Sources */,
 				A621D3F026D876A7006D4F65 /* SceneDelegate.swift in Sources */,
+				CE72C25027E861C3002B9937 /* ViewModel.swift in Sources */,
+				CE72C24E27E77E4F002B9937 /* Video.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
