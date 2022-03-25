@@ -11,22 +11,22 @@ import RxSwift
 import Alamofire
 
 class ViewModel {
+    var videos = [Video]()
         
     func getData() -> [Video] {
-        var videos = [Video]()
         AF.request("https://quipper.github.io/native-technical-exam/playlist.json",
                    method: .get,
                    parameters: nil)
-            .responseJSON(completionHandler: { response in
-                guard let data = response.data else { return }
+            .responseJSON(completionHandler: { [weak self] response in
+                guard let self = self,
+                      let data = response.data else { return }
                 do {
-                    videos = try JSONDecoder().decode([Video].self, from: data)
+                    self.videos = try JSONDecoder().decode([Video].self, from: data)
                 } catch {
                     print("JSONSerialization error:", error)
                 }
                 
             })
-        
         return videos
     }
     
