@@ -11,9 +11,17 @@ import RxSwift
 import Alamofire
 
 class ViewModel {
-    var videos = [Video]()
-        
-    func getData() -> [Video] {
+    
+    private let _videos: BehaviorRelay<[Video]> = .init(value: [])
+    var videos: Observable<[Video]> { _videos.asObservable() }// 把BehaviorRelay格式转成Observable各式
+//    var listOfVideos: [Video] {
+//        return _videos.value
+//    }
+//    var numberOfVideos: Int {
+//        return _videos.value.count
+//    }
+            
+    func getVideos() -> Observable<Void> {
         AF.request("https://quipper.github.io/native-technical-exam/playlist.json",
                    method: .get,
                    parameters: nil)
@@ -21,13 +29,13 @@ class ViewModel {
                 guard let self = self,
                       let data = response.data else { return }
                 do {
-                    self.videos = try JSONDecoder().decode([Video].self, from: data)
+                    self._videos.accept(try JSONDecoder().decode([Video].self, from: data))
                 } catch {
                     print("JSONSerialization error:", error)
                 }
                 
             })
-        return videos
+        return Observable.just(())
     }
     
 }

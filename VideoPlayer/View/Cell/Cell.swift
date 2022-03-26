@@ -7,6 +7,8 @@
 
 import Foundation
 import UIKit
+import RxCocoa
+import RxSwift
 
 class Cell: UITableViewCell {
     
@@ -17,8 +19,8 @@ class Cell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        videoDescription.isScrollEnabled = false
-        videoDescription.isEditable = false
+//        videoDescription.isScrollEnabled = false
+//        videoDescription.isEditable = false
     }
 
     func config(_ model: Video) {
