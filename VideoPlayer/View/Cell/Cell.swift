@@ -9,6 +9,7 @@ import Foundation
 import UIKit
 import RxCocoa
 import RxSwift
+import Kingfisher
 
 class Cell: UITableViewCell {
     
@@ -19,16 +20,16 @@ class Cell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-//        videoDescription.isScrollEnabled = false
-//        videoDescription.isEditable = false
+
     }
 
     func config(_ model: Video) {
-        videoTitle.text = model.title
-        presenterName.text = model.presenterName
-        videoDescription.text = model.description
-        guard let imageData = try? Data(contentsOf: URL(fileURLWithPath: model.thumbnailUrl)),
-              let image = UIImage(data: imageData) else { return }
-        thumbnailImageView.image = image
+        DispatchQueue.main.async { [weak self] in
+            guard let self = self else { return }
+            self.videoTitle.text = model.title
+            self.presenterName.text = model.presenterName
+            self.videoDescription.text = model.description
+            self.thumbnailImageView.kf.setImage(with: URL(string: model.thumbnailUrl))
+        }
     }
 }

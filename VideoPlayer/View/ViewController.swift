@@ -20,12 +20,12 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         setupTableView()
         viewModel.getVideos()
-
     }
     
     func setupTableView() {
 //        tableView.dataSource = self
 //        tableView.delegate = self
+        tableView.rowHeight = 108
         
         tableView.register(
             UINib(nibName: "Cell", bundle: .main),
@@ -39,7 +39,6 @@ class ViewController: UIViewController {
                     cellType: Cell.self)
             ) { [weak self] row, video, cell in
                 guard let self = self else { return }
-                print("@@@", row, video)
                 cell.config(video)
             }
             .disposed(by: bag)
@@ -47,7 +46,7 @@ class ViewController: UIViewController {
         tableView.rx.willDisplayCell
             .subscribe(onNext: { [weak self] _, indexPath in
                 guard let self = self else { return }
-
+                
             })
             .disposed(by: bag)
         
@@ -55,6 +54,7 @@ class ViewController: UIViewController {
                  .subscribe(onNext: { [weak self] indexPath in
                      guard let self = self else { return }
                    self.tableView.deselectRow(at: indexPath, animated: true)
+
                  }).disposed(by: bag)
     }
 }
