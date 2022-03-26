@@ -14,9 +14,9 @@ class ViewModel {
     
     private let _videos: BehaviorRelay<[Video]> = .init(value: [])
     var videos: Observable<[Video]> { _videos.asObservable() }// 把BehaviorRelay格式转成Observable各式
-//    var listOfVideos: [Video] {
-//        return _videos.value
-//    }
+    var listOfVideos: [Video] {
+        return _videos.value
+    }
 //    var numberOfVideos: Int {
 //        return _videos.value.count
 //    }

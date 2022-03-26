@@ -17,21 +17,42 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8tI-cI-cjg" userLabel="Player View">
+                                <rect key="frame" x="0.0" y="44" width="414" height="300"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="リストから押してください" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dKs-4A-OcN">
+                                        <rect key="frame" x="84.5" y="138" width="245" height="24"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="dKs-4A-OcN" firstAttribute="centerX" secondItem="8tI-cI-cjg" secondAttribute="centerX" id="3Gr-gc-fiH"/>
+                                    <constraint firstItem="dKs-4A-OcN" firstAttribute="centerY" secondItem="8tI-cI-cjg" secondAttribute="centerY" id="BFR-14-wH1"/>
+                                    <constraint firstAttribute="height" constant="300" id="LWy-MU-RKC"/>
+                                </constraints>
+                            </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="a62-Uu-h3Y">
-                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                                <rect key="frame" x="0.0" y="352" width="414" height="510"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </tableView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="8tI-cI-cjg" secondAttribute="trailing" id="0Re-6B-9So"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="a62-Uu-h3Y" secondAttribute="trailing" id="8LH-I1-NqR"/>
+                            <constraint firstItem="8tI-cI-cjg" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="9YJ-vV-wLZ"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="a62-Uu-h3Y" secondAttribute="bottom" id="Bc2-pM-baO"/>
-                            <constraint firstItem="a62-Uu-h3Y" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="CwZ-W9-XPn"/>
+                            <constraint firstItem="a62-Uu-h3Y" firstAttribute="top" secondItem="8tI-cI-cjg" secondAttribute="bottom" constant="8" id="CwZ-W9-XPn"/>
+                            <constraint firstItem="8tI-cI-cjg" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="lMq-Uz-ERG"/>
                             <constraint firstItem="a62-Uu-h3Y" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="tp1-hz-lRb"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="playerView" destination="8tI-cI-cjg" id="GfQ-DI-Amk"/>
                         <outlet property="tableView" destination="a62-Uu-h3Y" id="e9m-ht-64W"/>
                     </connections>
                 </viewController>
