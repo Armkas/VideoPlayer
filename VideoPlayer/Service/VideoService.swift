@@ -16,9 +16,9 @@ class VideoService {
 
 extension VideoService: VideoAPI {
     
-    func fetchVideos() -> Single<VideosResponse> {
+    func fetchVideos() -> Observable<VideosResponse> {
         
-        return Single.create { [httpService] (single) -> Disposable in
+        return Observable.create { [httpService] (observer) -> Disposable in
             
             do {
                 try VideoHttpRouter.getVideos
@@ -26,13 +26,14 @@ extension VideoService: VideoAPI {
                     .responseJSON { (result) in
                         do {
                             let videos = try VideoService.parseVideos(result)
-                            single(.success(videos))
+                            observer.onNext(videos)
+                            observer.onCompleted()
                         } catch {
-                            single(.failure(error))
+                            observer.onError(error)
                         }
                     }
             } catch {
-                single(.failure(CustomError.error(message:"Fetch Failed")))
+                observer.onError(CustomError.error(message:"Fetch Failed"))
             }
             return Disposables.create()
         }

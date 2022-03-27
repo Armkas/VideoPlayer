@@ -11,18 +11,17 @@ enum CustomError: Error {
     case error(message: String)
 }
 
-enum CustomError: Error {
-    case invalidResponse
-    case unknown(Error)
-}
-
-extension CustomError {
-    
-    var title: String {
-        switch self {
-            case .invalidResponse: return "無効なレスポンスです。"
-            case .unknown(let error): return "予期せぬエラーが発生しました。\(error)"
-        }
-    }
-    
-}
+//enum CustomError: Error {
+//    case invalidResponse
+//    case unknown(Error)
+//}
+//
+//extension CustomError {
+//    
+//    var title: String {
+//        switch self {
+//            case .invalidResponse: return "無効なレスポンスです。"
+//            case .unknown(let error): return "予期せぬエラーが発生しました。\(error)"
+//        }
+//    }
+//}

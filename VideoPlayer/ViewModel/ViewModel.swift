@@ -11,14 +11,13 @@ import RxSwift
 
 class ViewModel {
     
-    private let videoService: VideoAPI
+    private let videoRepository = VideoRepository()
     private let _videos: BehaviorRelay<[VideoModel]> = .init(value: [])
     var videos: Observable<[VideoModel]> { _videos.asObservable() }
     var listOfVideos: [VideoModel] { _videos.value }
     private let bag = DisposeBag()
     
-    init(_ videoService: VideoAPI) {
-        self.videoService = videoService
+    init() {
         getVideos()
     }
 }
@@ -26,12 +25,12 @@ class ViewModel {
 extension ViewModel {
     
     func getVideos() {
-        self.videoService
-            .fetchVideos()
-            .map { videos in
-                self._videos.accept(videos)
-            }
-            .subscribe()
+        return videoRepository.getVideos()
+            .subscribe(
+                onNext: { [weak self] videos in
+                    guard let self = self else { return }
+                    self._videos.accept(videos)
+                })
             .disposed(by:bag)
     }
 }

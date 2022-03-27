@@ -15,7 +15,7 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var playerView: UIView!
     @IBOutlet weak var tableView: UITableView!
-    let viewModel = ViewModel(VideoService.shared)
+    private let viewModel = ViewModel()
     private let bag = DisposeBag()
     let playerViewController = AVPlayerViewController()
     let player = AVPlayer(playerItem: nil)
