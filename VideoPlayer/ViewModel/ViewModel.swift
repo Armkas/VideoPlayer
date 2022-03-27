@@ -13,15 +13,10 @@ import Alamofire
 class ViewModel {
     
     private let _videos: BehaviorRelay<[Video]> = .init(value: [])
-    var videos: Observable<[Video]> { _videos.asObservable() }// 把BehaviorRelay格式转成Observable各式
-    var listOfVideos: [Video] {
-        return _videos.value
-    }
-//    var numberOfVideos: Int {
-//        return _videos.value.count
-//    }
-            
-    func getVideos() -> Observable<Void> {
+    var videos: Observable<[Video]> { _videos.asObservable() }
+    var listOfVideos: [Video] { _videos.value }
+
+    func getVideos() {
         AF.request("https://quipper.github.io/native-technical-exam/playlist.json",
                    method: .get,
                    parameters: nil)
@@ -35,7 +30,6 @@ class ViewModel {
                 }
                 
             })
-        return Observable.just(())
     }
     
 }

@@ -17,11 +17,6 @@ class Cell: UITableViewCell {
     @IBOutlet weak var videoTitle: UILabel!
     @IBOutlet weak var presenterName: UILabel!
     @IBOutlet weak var videoDescription: UITextView!
-    
-    override func awakeFromNib() {
-        super.awakeFromNib()
-
-    }
 
     func config(_ model: Video) {
         DispatchQueue.main.async { [weak self] in

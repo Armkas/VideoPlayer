@@ -27,13 +27,12 @@ class ViewController: UIViewController {
         setupPlayer()
     }
     
-    
     func setupTableView() {
         tableView.rowHeight = 108
         
         tableView.register(
             UINib(nibName: "Cell", bundle: .main),
-            forCellReuseIdentifier: "Cell"//要不要写成CommentCell.reuseId
+            forCellReuseIdentifier: "Cell"
         )
         
         viewModel.videos
@@ -48,7 +47,7 @@ class ViewController: UIViewController {
             .disposed(by: bag)
         
         tableView.rx.willDisplayCell
-            .subscribe(onNext: { [weak self] _, indexPath in
+            .subscribe(onNext: { [weak self] cell, indexPath in
                 guard let self = self else { return }
                 
             })
