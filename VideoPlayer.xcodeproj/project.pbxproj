@@ -25,6 +25,7 @@
 		CE7CABF727F044B500590B92 /* VideoHttpRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7CABF627F044B500590B92 /* VideoHttpRouter.swift */; };
 		CE7CABF927F049FD00590B92 /* VideoService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7CABF827F049FD00590B92 /* VideoService.swift */; };
 		CE7CABFB27F04A1D00590B92 /* VideoAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7CABFA27F04A1D00590B92 /* VideoAPI.swift */; };
+		CE7CABFD27F05A0600590B92 /* CustomError.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7CABFC27F05A0600590B92 /* CustomError.swift */; };
 		CE93B0DB27EE0D120066517B /* Cell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE93B0DA27EE0D120066517B /* Cell.xib */; };
 		CE93B0DD27EE0D1E0066517B /* Cell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE93B0DC27EE0D1E0066517B /* Cell.swift */; };
 /* End PBXBuildFile section */
@@ -73,6 +74,7 @@
 		CE7CABF627F044B500590B92 /* VideoHttpRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoHttpRouter.swift; sourceTree = "<group>"; };
 		CE7CABF827F049FD00590B92 /* VideoService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoService.swift; sourceTree = "<group>"; };
 		CE7CABFA27F04A1D00590B92 /* VideoAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoAPI.swift; sourceTree = "<group>"; };
+		CE7CABFC27F05A0600590B92 /* CustomError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomError.swift; sourceTree = "<group>"; };
 		CE93B0DA27EE0D120066517B /* Cell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = Cell.xib; sourceTree = "<group>"; };
 		CE93B0DC27EE0D1E0066517B /* Cell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cell.swift; sourceTree = "<group>"; };
 		CED97FAC92B734B19CB8EE68 /* Pods_VideoPlayer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_VideoPlayer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -212,6 +214,7 @@
 			isa = PBXGroup;
 			children = (
 				CE72C24D27E77E4F002B9937 /* VideoModel.swift */,
+				CE7CABFC27F05A0600590B92 /* CustomError.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -473,6 +476,7 @@
 				A621D3F226D876A7006D4F65 /* ViewController.swift in Sources */,
 				A621D3EE26D876A7006D4F65 /* AppDelegate.swift in Sources */,
 				A621D3F026D876A7006D4F65 /* SceneDelegate.swift in Sources */,
+				CE7CABFD27F05A0600590B92 /* CustomError.swift in Sources */,
 				CE7CABF527F0448200590B92 /* VideoHttpService.swift in Sources */,
 				CE72C25027E861C3002B9937 /* ViewModel.swift in Sources */,
 				CE72C24E27E77E4F002B9937 /* VideoModel.swift in Sources */,

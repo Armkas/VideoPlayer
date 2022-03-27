@@ -7,6 +7,7 @@
 
 import Foundation
 import RxSwift
+import Alamofire
 
 class VideoService {
     static let shared: VideoService = VideoService()
@@ -23,21 +24,29 @@ extension VideoService: VideoAPI {
                 try VideoHttpRouter.getVideos
                     .request(usingHttpService: httpService)
                     .responseJSON { (result) in
-                        guard let data = result.data else { return }
                         do {
-                            let videos = try JSONDecoder().decode(VideosResponse.self, from: data)
+                            let videos = try VideoService.parseVideos(result)
                             single(.success(videos))
                         } catch {
-                           //TODO
-                        } 
+                            single(.failure(error))
+                        }
                     }
             } catch {
-                //TODO
+                single(.failure(CustomError.error(message:"Fetch Failed")))
             }
-            
             return Disposables.create()
         }
     }
+}
+
+extension VideoService {
     
-    
+    static func parseVideos(_ result: AFDataResponse<Any>) throws -> VideosResponse {
+        guard let data = result.data,
+              let videosResponse = try? JSONDecoder().decode(VideosResponse.self, from: data)
+        else {
+            throw CustomError.error(message: "Invalid JSON")
+        }
+        return videosResponse
+    }
 }
