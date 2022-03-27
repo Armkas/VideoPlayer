@@ -55,10 +55,12 @@ class ViewController: UIViewController {
         
         tableView.rx.itemSelected
             .subscribe(onNext: { [weak self] indexPath in
-                guard let self = self else { return }
-                self.tableView.deselectRow(at: indexPath, animated: true)
-                guard let url = URL(string: self.viewModel.listOfVideos[indexPath.row].videoUrl) else { return }
+                guard let self = self,
+                      let url = URL(string: self.viewModel.listOfVideos[indexPath.row].videoUrl),
+                      url != self.viewModel.currentVideoUrl
+                else { return }
                 self.player.replaceCurrentItem(with: AVPlayerItem(url: url))
+                self.viewModel.currentVideoUrl = url
                 self.player.play()
             }).disposed(by: bag)
     }

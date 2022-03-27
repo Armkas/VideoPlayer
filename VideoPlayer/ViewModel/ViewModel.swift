@@ -16,6 +16,7 @@ class ViewModel {
     var videos: Observable<[VideoModel]> { _videos.asObservable() }
     var listOfVideos: [VideoModel] { _videos.value }
     private let bag = DisposeBag()
+    var currentVideoUrl: URL? = nil
     
     init() {
         getVideos()
