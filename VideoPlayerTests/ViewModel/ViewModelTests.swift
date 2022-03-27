@@ -7,10 +7,14 @@
 
 import Foundation
 import XCTest
-
+import RxSwift
+import RxCocoa
 @testable import VideoPlayer
 
-class ViewModelTests: XCTest {
+class ViewModelTests: XCTestCase {
+    
+    let viewModel = ViewModel()
+    private let bag: DisposeBag = .init()
     
     override func setUp() {
         super.setUp()
@@ -20,4 +24,15 @@ class ViewModelTests: XCTest {
         super.tearDown()
     }
     
+    func testViewModel() {
+        self.viewModel.getVideos()
+        
+        viewModel.videos
+            .subscribe(onNext: { (videos) in
+                XCTAssertEqual(videos, DummyDataModel.dummyVideoModels)
+                XCTAssertEqual(videos.count, 5)
+            })
+            .disposed(by: bag)
+    }
+
 }

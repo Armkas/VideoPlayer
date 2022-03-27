@@ -25,6 +25,8 @@
 		CE4D245827F10AEC00F43BCA /* JSONDecoder+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4D245727F10AEC00F43BCA /* JSONDecoder+Extension.swift */; };
 		CE72C24E27E77E4F002B9937 /* VideoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE72C24D27E77E4F002B9937 /* VideoModel.swift */; };
 		CE72C25027E861C3002B9937 /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE72C24F27E861C3002B9937 /* ViewModel.swift */; };
+		CE73EB2127F115C800DF6D6D /* VideoRepositoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE73EB2027F115C800DF6D6D /* VideoRepositoryTests.swift */; };
+		CE73EB2327F1196100DF6D6D /* VideoDataSourceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE73EB2227F1196100DF6D6D /* VideoDataSourceTests.swift */; };
 		CE7CABEF27F0411000590B92 /* HttpRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7CABEE27F0411000590B92 /* HttpRouter.swift */; };
 		CE7CABF127F0422200590B92 /* HttpService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7CABF027F0422200590B92 /* HttpService.swift */; };
 		CE7CABF527F0448200590B92 /* VideoHttpService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7CABF427F0448200590B92 /* VideoHttpService.swift */; };
@@ -84,6 +86,8 @@
 		CE4D245727F10AEC00F43BCA /* JSONDecoder+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "JSONDecoder+Extension.swift"; sourceTree = "<group>"; };
 		CE72C24D27E77E4F002B9937 /* VideoModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoModel.swift; sourceTree = "<group>"; };
 		CE72C24F27E861C3002B9937 /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
+		CE73EB2027F115C800DF6D6D /* VideoRepositoryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoRepositoryTests.swift; sourceTree = "<group>"; };
+		CE73EB2227F1196100DF6D6D /* VideoDataSourceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoDataSourceTests.swift; sourceTree = "<group>"; };
 		CE7CABEE27F0411000590B92 /* HttpRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HttpRouter.swift; sourceTree = "<group>"; };
 		CE7CABF027F0422200590B92 /* HttpService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HttpService.swift; sourceTree = "<group>"; };
 		CE7CABF427F0448200590B92 /* VideoHttpService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoHttpService.swift; sourceTree = "<group>"; };
@@ -211,6 +215,7 @@
 		CE4D244927F103DB00F43BCA /* Repository */ = {
 			isa = PBXGroup;
 			children = (
+				CE73EB2027F115C800DF6D6D /* VideoRepositoryTests.swift */,
 			);
 			path = Repository;
 			sourceTree = "<group>";
@@ -218,6 +223,7 @@
 		CE4D244A27F103E800F43BCA /* DataSource */ = {
 			isa = PBXGroup;
 			children = (
+				CE73EB2227F1196100DF6D6D /* VideoDataSourceTests.swift */,
 			);
 			path = DataSource;
 			sourceTree = "<group>";
@@ -603,9 +609,11 @@
 			files = (
 				CE4D245427F1074200F43BCA /* DummyDataModel.swift in Sources */,
 				A621D40526D876A9006D4F65 /* VideoPlayerTests.swift in Sources */,
+				CE73EB2327F1196100DF6D6D /* VideoDataSourceTests.swift in Sources */,
 				CE4D244E27F104B300F43BCA /* DataProvider.swift in Sources */,
 				CE4D244827F1023500F43BCA /* ViewModelTests.swift in Sources */,
 				CE4D245227F1062200F43BCA /* VideoModelTests.swift in Sources */,
+				CE73EB2127F115C800DF6D6D /* VideoRepositoryTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
