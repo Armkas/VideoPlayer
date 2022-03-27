@@ -15,6 +15,7 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var playerView: UIView!
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var playerHightConstraint: NSLayoutConstraint!
     private let viewModel = ViewModel()
     private let bag = DisposeBag()
     let playerViewController = AVPlayerViewController()
@@ -23,8 +24,14 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        setPlayerHeight()
         setupTableView()
         setupPlayer()
+    }
+    
+    func setPlayerHeight() {
+        let playerheight = min(UIScreen.main.bounds.height, UIScreen.main.bounds.width) * 0.5
+        playerHightConstraint.constant = playerheight
     }
     
     func setupTableView() {

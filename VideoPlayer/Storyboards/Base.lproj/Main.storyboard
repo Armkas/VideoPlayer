@@ -52,6 +52,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="playerHightConstraint" destination="LWy-MU-RKC" id="zdi-YB-8sz"/>
                         <outlet property="playerView" destination="8tI-cI-cjg" id="GfQ-DI-Amk"/>
                         <outlet property="tableView" destination="a62-Uu-h3Y" id="e9m-ht-64W"/>
                     </connections>

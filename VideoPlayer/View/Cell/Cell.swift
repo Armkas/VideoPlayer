@@ -16,7 +16,7 @@ class Cell: UITableViewCell {
     @IBOutlet weak var thumbnailImageView: UIImageView!
     @IBOutlet weak var videoTitle: UILabel!
     @IBOutlet weak var presenterName: UILabel!
-    @IBOutlet weak var videoDescription: UITextView!
+    @IBOutlet weak var videoDescription: UILabel!
 
     func config(_ model: VideoModel) {
         DispatchQueue.main.async { [weak self] in
