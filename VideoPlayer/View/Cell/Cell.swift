@@ -18,7 +18,7 @@ class Cell: UITableViewCell {
     @IBOutlet weak var presenterName: UILabel!
     @IBOutlet weak var videoDescription: UITextView!
 
-    func config(_ model: Video) {
+    func config(_ model: VideoModel) {
         DispatchQueue.main.async { [weak self] in
             guard let self = self else { return }
             self.videoTitle.text = model.title

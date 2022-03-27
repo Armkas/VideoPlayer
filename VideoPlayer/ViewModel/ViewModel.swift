@@ -8,28 +8,30 @@
 import Foundation
 import RxCocoa
 import RxSwift
-import Alamofire
 
 class ViewModel {
     
-    private let _videos: BehaviorRelay<[Video]> = .init(value: [])
-    var videos: Observable<[Video]> { _videos.asObservable() }
-    var listOfVideos: [Video] { _videos.value }
-
-    func getVideos() {
-        AF.request("https://quipper.github.io/native-technical-exam/playlist.json",
-                   method: .get,
-                   parameters: nil)
-            .responseJSON(completionHandler: { [weak self] response in
-                guard let self = self,
-                      let data = response.data else { return }
-                do {
-                    self._videos.accept(try JSONDecoder().decode([Video].self, from: data))
-                } catch {
-                    print("JSONSerialization error:", error)
-                }
-                
-            })
-    }
+    private let videoService: VideoAPI
+    private let _videos: BehaviorRelay<[VideoModel]> = .init(value: [])
+    var videos: Observable<[VideoModel]> { _videos.asObservable() }
+    var listOfVideos: [VideoModel] { _videos.value }
+    private let bag = DisposeBag()
     
+    init(_ videoService: VideoAPI) {
+        self.videoService = videoService
+        getVideos()
+    }
+}
+
+extension ViewModel {
+    
+    func getVideos() {
+        self.videoService
+            .fetchVideos()
+            .map { videos in
+                self._videos.accept(videos)
+            }
+            .subscribe()
+            .disposed(by:bag)
+    }
 }

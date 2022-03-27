@@ -15,15 +15,15 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var playerView: UIView!
     @IBOutlet weak var tableView: UITableView!
-    let viewModel = ViewModel()
+    let viewModel = ViewModel(VideoService.shared)
     private let bag = DisposeBag()
     let playerViewController = AVPlayerViewController()
     let player = AVPlayer(playerItem: nil)
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         setupTableView()
-        viewModel.getVideos()
         setupPlayer()
     }
     
