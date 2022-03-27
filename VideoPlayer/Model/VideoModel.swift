@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct VideoModel: Codable {
+struct VideoModel: Decodable {
     
     let title: String
     let presenterName: String
@@ -39,3 +39,5 @@ struct VideoModel: Codable {
 //}
 //
 typealias VideosResponse = [VideoModel]
+
+extension VideoModel: Equatable { }
