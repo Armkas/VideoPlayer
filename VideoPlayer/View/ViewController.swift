@@ -35,7 +35,7 @@ class ViewController: UIViewController {
     }
     
     func setupTableView() {
-        tableView.rowHeight = 108
+        tableView.rowHeight = 98
         
         tableView.register(
             UINib(nibName: "Cell", bundle: .main),
